@@ -48,6 +48,11 @@
             transform: scale(1.1);
         }
 
+        /* Weiße Gummibärchen bekommen eine spezielle Klasse */
+        .gummy-white {
+            border: 2px solid #ccc !important;
+        }
+
         .deutung {
             margin-top: 20px;
             padding: 15px;
@@ -152,6 +157,9 @@
                 
                 const gummy = document.createElement('div');
                 gummy.className = 'gummy';
+                if (zufallsFarbe === 'weiß') {
+                    gummy.classList.add('gummy-white');
+                }
                 gummy.style.backgroundColor = farben[zufallsFarbe];
                 gummy.style.boxShadow = `0 0 10px ${farben[zufallsFarbe]}88`;
                 gummy.onclick = () => zeigeDeutung(zufallsFarbe, i);
